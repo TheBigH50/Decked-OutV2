@@ -4,7 +4,7 @@ import { useQuery } from '@apollo/client';
 
 
 
-function FlashcardStudy(props) {
+function FlashcardStudy(flashCardData) {
     const [card_index, changeCardIndex] = useState(0)
     function FlipCard() {
         document.getElementById("SideB").classList.toggle("hide");
@@ -17,12 +17,12 @@ function FlashcardStudy(props) {
         if (card_index > 0) {
             // card_index -= 1;
             let index = card_index
-            
+
             //console.log(data)
-            changeCardIndex( index-=1 )
+            changeCardIndex(index -= 1)
         } else {
             // card_index = total_cards -1;
-            changeCardIndex(props.flashcards.flashcard.length -1)
+            changeCardIndex(flashCardData.flashcards.flashcard.length - 1)
         }
         document.getElementById("SideB").classList.add("hide");
         document.getElementById("SideA").classList.remove("hide");
@@ -31,9 +31,9 @@ function FlashcardStudy(props) {
     //increments the card index value which will change the contents of the displayed flashcard.
     function Next_Card() {
         // THIS NEEDS TO BE THE CARD_INDEX.LENGTH
-        if (card_index < props.flashcards.flashcard.length -1) {
+        if (card_index < flashCardData.flashcards.flashcard.length - 1) {
             let index = card_index
-            changeCardIndex( index+=1 )
+            changeCardIndex(index += 1)
         } else {
             // card_index = 0;
             changeCardIndex(0)
@@ -43,7 +43,7 @@ function FlashcardStudy(props) {
     }
     //index that will let us loop through all the cards.
 
-    //need to figure out what exactly is passed into this function so that we can properly set up the props calls.
+    //need to figure out what exactly is passed into this function so that we can properly set up the flashCardData calls.
     // as of right now I am using the card index let to loop through all of the cards in the deck. 
 
     return (
@@ -56,12 +56,12 @@ function FlashcardStudy(props) {
                 <div class="card Study-Card">
                     <div class="card-content">
                         <div class="Study center-align" id="SideA">
-                            <div>{props.flashcards.flashcard[card_index].sideA}</div>
+                            {/* <div>{flashCardData.flashcards.flashcard[card_index].sideA}</div> */}
                             <a class="btn flow-text" id="SideA_btn" onClick={() => FlipCard()}><i class="material-icons">autorenew</i></a>
 
                         </div>
                         <div class="Study center-align hide" id="SideB">
-                            <div>{props.flashcards.flashcard[card_index].sideB}</div>
+                            {/* <div>{flashCardData.flashcards.flashcard[card_index].sideB}</div> */}
                             <a class="btn flow-text" id="SideB_btn" onClick={() => FlipCard()}><i class="material-icons ">autorenew</i></a>
                         </div>
 

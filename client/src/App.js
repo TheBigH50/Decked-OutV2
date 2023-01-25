@@ -72,14 +72,7 @@ function App() {
             path='/addFlashCard'
             element={<Flashcard_Create />}
           />
-          
-
-
-
         </Routes>
-
-
-
       </Router>
     </ApolloProvider>
   );

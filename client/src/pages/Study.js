@@ -14,9 +14,10 @@ import { useLocation } from 'react-router-dom'
 const Study = () => {
   const location = useLocation();
   const deckId = location.state.deck;
-  console.log(location)
-  console.log("deck ID-----------------");
-  console.log(deckId);
+  // console.log(`useLocation hook: ------------------`)
+  // console.log(location);
+  // console.log("deck ID-----------------");
+  // console.log(deckId);
 
   const {loading, data} = useQuery(FLASHCARD,{variables: {deck: deckId}});
   console.log(data);

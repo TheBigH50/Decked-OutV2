@@ -2,7 +2,7 @@ const path = require('path');
 const dotenv = require('dotenv')
 const envFound = dotenv.config({ path: path.resolve(__dirname, '../../.env')});
 const mongoose = require('mongoose');
-console.log(process.env.MONGODB_URI);
+// console.log(process.env.MONGODB_URI);
 
 
 if(!envFound) {
