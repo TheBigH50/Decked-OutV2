@@ -1,10 +1,17 @@
+const path = require('path');
+const dotenv = require('dotenv')
+const envFound = dotenv.config({ path: path.resolve(__dirname, '../../.env')});
 const mongoose = require('mongoose');
+console.log(process.env.MONGODB_URI);
+
+
+if(!envFound) {
+    console.error("no .env found")
+    throw new Error("couldn't find .env")
+}
 
 mongoose.connect(
-    //process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/decked-out',
-    //process.env.MONGODB_URI || 
-    `mongodb+srv://LelandByrd:asKd7RblXwkwAhzv@decked-outv2.tyzmnxp.mongodb.net/?retryWrites=true&w=majority`,
-    // `mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@decked-outv2.tyzmnxp.mongodb.net/?retryWrites=true&w=majority`,
+    process.env.MONGODB_URI,
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,
