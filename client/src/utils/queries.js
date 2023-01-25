@@ -32,7 +32,7 @@ query userDecks{
 // this is not working yet
 //you only need the 'query flashcards' here to put parameters in parenthesis
 
-
+// this is not working yet
 export const FLASHCARDS = gql`
 query flashcards{
     flashcards{
@@ -43,7 +43,7 @@ query flashcards{
         noteSideB
     }
 }`
-
+// this is not working yet
 export const FLASHCARD = gql`
 query getFullDeck($deck: ID!){
     flashcard(deck: $deck){
@@ -56,7 +56,7 @@ query getFullDeck($deck: ID!){
     }
 }`
 
-
+//no data coming back and get a 400 error
 export const STUDY_DECK = gql`
 query getSingleDeck($deckId: ID!){
     deck(deckId: $deckId){
@@ -71,7 +71,7 @@ query getSingleDeck($deckId: ID!){
     }
 }
 `
-
+//this does work
 export const DECK_ID = gql`
 query getSingleDeck($deckTitle: String){
     deckTitle(deckTitle: $deckTitle){

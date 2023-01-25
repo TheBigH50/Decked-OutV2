@@ -21,7 +21,7 @@
   "bugs": {
     "url": "https://github.com/clabel95/Decked-Out/issues"
   },
-  "homepage": "https://decked--out.herokuapp.com/",
+  "homepage": "https://lelandbyrd.com/assets/Decked-Out/index.html",
   "devDependencies": {
     "concurrently": "^7.0.0",
     "jest-dom": "^4.0.0"
